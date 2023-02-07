@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CryCox - Trade Crypto Currency</title>
+        <link rel="stylesheet" href="css/hover.css" />
+        <link rel="icon" type="image/x-icon" href="assets/crycox-fevicone-01.svg" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /> -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="css/slick.css" />
+        <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+        <header>
+            <nav class="bg-white fixed top-0 w-full z-50 shadow border-gray-200 px-2 sm:px-4 rounded">
+                <div class="max-w-[1600px] px-5 flex flex-wrap grid-cols-2 gap-5 py-1 items-center justify-between mx-auto">
+                    <div>
+                        <a href="index.html" class="text-[#0674BB] font-bold text-[16px]">
+                            <img src="assets/crycox-logo.png" class="max-w-[150px]" />
+                        </a>
+                    </div>
+
+                    <div class="">
+                        <a class="md:text-[16px] text-[12px] md:mr-10 mr-2" href="3-buy-crypto.html">Buy</a>
+                        <a class="md:text-[16px] text-[#F1971F] text-[12px] font-bold md:mr-10 mr-2" href="4-sell-crypto.html">Sell</a>
+                        <a class="md:text-[16px] text-[12px] md:mr-10 mr-2" href="7-Create-offer-sell.html">Create An Offer</a>
+                        <a class="md:text-[16px] text-[12px] md:mr-10 mr-2" href="13-Wallet.html">Wallet</a>
+                        <a class="md:text-[16px] text-[12px] md:mr-10 mr-2" href="15-Trade-History.html">Dashboard</a>
+                    </div>
+                    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-md rounded-lg md:hidden hover:bg-gray-100 mb-4" aria-controls="navbar-default" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                        <ul class="flex flex-col mt-4 border border-gray-100 items-center justify-content-center rounded-lg bg-gray-50 md:flex-row md:space-x-4 md:mt-0 md:text-md md:font-medium md:border-0 md:bg-white">
+                            <li class="lg:text-[15px] text-[12px] transition duration-300 focus:outline-none focus:ring-blue-300 font-bold rounded-[5px] text-center px-2 min-w-[100px]">
+                                <a href="19-Account-setting.html" class="text-black">
+                                    <div class="flex items-center">
+                                        RU...A@RAMLOGICS.COM
+
+                                        <span><img src="images/user.png" class="ml-2" /></span>
+                                    </div>
+                                    <a class="text-[#FFC107] text-[12px]" href="#">0.00 INR </a>
+                                </a>
+                            </li>
+                            <li>
+                                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black hover:text-[#FFC107] font-medium text-sm text-center items-center" type="button">
+                                    <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 ">
+                                    <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
+                                        <li>
+                                            <a href="#" class="block px-4 py-2">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2">Settings</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2">Earnings</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2">Sign out</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="my-3 lg:text-[16px] text-[15px] transition duration-300 focus:outline-none focus:ring-blue-300 font-bold rounded-[5px] text-center px-2 py-2 min-w-[80px]">
+                                <a href="login.html" class="text-black"> </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="xl:mt-[100px] mt-[80px]">
+            <div class="head text-center py-8">
+                <p class="xl:text-[40px] lg:text-[25px] mt-6 text-[28px] text-white font-bold">
+                    Sell Bitcoin with Cash in Person (INR) - <br />
+                    Bangalore or Mysore
+                </p>
+            </div>
+
+            <section class="mt-10">
+                <div class="max-w-[1200px] mx-auto p-4">
+                    <div class="border-2 rounded-lg p-5">
+                        <h3 class="text-center md:text-[30px] text-[16px] font-bold">How much do you want to Sell?</h3>
+
+                        <div class="p-5">
+                            <form>
+                                <div class="flex md:flex-row flex-col justify-between">
+                                    <div class="md:w-[45%] w-full">
+                                        <label for="password" class="block mb-2 text-[16px] font-medium text-gray-900 ">I will receive</label>
+                                        <div class="flex">
+                                            <input type="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required placeholder="300" />
+                                            <a class="p-2.5 border rounded-r-lg font-bold" href="#">INR</a>
+                                        </div>
+                                    </div>
+                                    <div class="md:w-[45%] w-full">
+                                        <label for="name" class="block mb-2 text-[16px] font-medium text-gray-900 ">and pay in Bitcoin</label>
+                                        <div class="flex">
+                                            <input type="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-l-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required placeholder="0.00013438" />
+                                            <a class="p-2.5 border rounded-r-lg font-bold" href="#">BTC</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="text-[16px] py-4">You pay 187.44 INR worth of Bitcoin + 1.0 % escrow fee</p>
+
+                                <div class="w-full mt-8">
+                                    <a href="./21-Seller-chat.html"><button type="submit" class="border border-[#F1971F] text-black font-medium rounded-lg px-10 w-full text-[16px] py-3.5 text-center">Sell now</button></a>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="mt-10 border border-[#A8A5A5] p-8 rounded-lg">
+                            <h4 class="text-center md:text-[30px] text-[16px] text-[#F1971F]">About this offer</h4>
+
+                            <div class="flex md:flex-row flex-col justify-between mt-10">
+                                <div>
+                                    <p class="text-[16px]">Buyer rate</p>
+                                    <h3 class="text-[16px] font-bold">234,558,725.935 IDR•<span class="text-[16px] font-medium">10% above market</span></h3>
+                                </div>
+                                <div>
+                                    <p class="text-[16px]">Trade time limit</p>
+                                    <h3 class="text-[16px] font-bold">30 min</h3>
+                                </div>
+                            </div>
+
+                            <div class="flex md:flex-row flex-col justify-between mt-10">
+                                <div>
+                                    <p class="text-[16px]">Sell limits</p>
+                                    <h3 class="text-[16px] font-bold">300 INR</h3>
+                                </div>
+                                <div class="md:mr-12 mr-0">
+                                    <p class="text-[16px]">Crycox fee</p>
+                                    <h3 class="text-[16px] font-bold">0%</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 border border-[#A8A5A5] p-8 rounded-lg">
+                            <h4 class="text-center md:text-[30px] text-[20px text-[#F1971F]">About this Buyer</h4>
+                            <div class="flex md:flex-row flex-col items-center mt-10">
+                                <div>
+                                    <img src="images/Group.svg" alt="" />
+                                </div>
+
+                                <div class="md:ml-10 ml-0">
+                                    <a class="md:text-[20px] text-[16px]" href="23-my-profile.html">Pro_Oracle_Trader</a>
+
+                                    <p class="text-[16px]">Seen 36 minutes ago</p>
+                                </div>
+                            </div>
+                            <div class="flex md:flex-row flex-col justify-between mt-10 md:w-[50%] w-full">
+                                <div>
+                                    <p class="text-[16px]">Positive feedback</p>
+                                    <h3 class="text-[16px] font-bold pt-10">111</h3>
+                                </div>
+                                <div>
+                                    <p class="text-[16px]">Negative feedback</p>
+                                    <h3 class="text-[16px] font-bold pt-10">0</h3>
+                                </div>
+                            </div>
+
+                            <div class="flex md:flex-row flex-col justify-between mt-10 md:w-[50%] w-full">
+                                <div class="flex items-center">
+                                    <img src="images/check-mark 2.svg" alt="" />
+                                    <p class="text-[16px] pl-4">ID verified</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <img src="images/check-mark 2.svg" alt="" />
+                                    <p class="text-[16px]">Address verified</p>
+                                </div>
+                            </div>
+
+                            <div class="flex md:flex-row flex-col justify-between mt-10 md:w-[50%] w-full mb-4">
+                                <div class="flex items-center">
+                                    <img src="images/check-mark 2.svg" alt="" />
+                                    <p class="text-[16px]">Email verified</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <img src="images/check-mark 2.svg" alt="" />
+                                    <p class="text-[16px] pl-4">Phone verified</p>
+                                </div>
+                            </div>
+                            <div class="mt-8">
+                                <h4 class="text-[20px] pb-10">Average trade speed</h4>
+                                <a class="bg-[#FFF9F4] text-[16px] py-[10px] px-[30px] border rounded-lg" href="#">Instant</a>
+                            </div>
+                        </div>
+
+                        <div class="flex lg:flex-row flex-col bg-[#FFF9F4] border border-[#000] rounded-lg mt-10 p-4 items-center justify-between">
+                            <div>
+                                <h5 class="lg:text-[30px] text-[18px] lg:text-left text-center font-bold">We need some additional details</h5>
+                                <p class="text-[16px] lg:text-left text-center">To sell Bitcoin to <span class="text-[#000AFF]">Pro_Oracle_Trader</span> you need to verify your email and phone number.</p>
+                            </div>
+                            <div class="lg:mt-0 mt-5">
+                                <div class="flex">
+                                    <a class="bg-[#0E509D] py-2 px-[30px] rounded-l-lg text-white p-2" href="#">Start Verification</a>
+                                    <a class="p-2 bg-[#fff] border rounded-r-lg font-bold" href="#"><img src="images/Vector 3.svg" alt="" /></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center items-center border border-[#000] rounded-lg mt-10 p-4">
+                            <h5 class="md:text-[30px] text-[16px]">
+                                <span class="md:text-[20px] text-[16px] pr-4"><i class="fa-solid fa-magnifying-glass"></i> </span> Search Similar Offers
+                            </h5>
+                        </div>
+                        <div class="text-center py-8">
+                            <p class="text-[16px]">Reserve Bitcoin for this trade and start live chat with <a class="text-[#000AFF]" href="#">Pro_Oracle_Trader</a></p>
+                        </div>
+                    </div>
+                    <div class="max-w-[1200px] mx-auto lg:p-0 p-5 text-center items-center my-10">
+                        <div class="border border-[#000] p-5 rounded-lg">
+                            <h5 class="md:text-[30px] text-[16px] text-[#F1971F]">Offer terms</h5>
+                            <p class="md:text-[16px] text-[14px]">I will buy BTC for cash all over India</p>
+                        </div>
+                    </div>
+                    <h5 class="text-center text-[20px]">Cash in person</h5>
+
+                    <div class="mx-auto lg:p-0 p-5 max-w-[1200px] my-10">
+                        <div class="p-5 border border-[#000] rounded-lg">
+                            <div class="flex md:flex-row flex-col justify-between border-b">
+                                <div>
+                                    <h4 class="text-[20px] text-[#F1971F]">Feedback on this offer</h4>
+                                </div>
+                                <div>
+                                    <div class="flex justify-end lg:flex hidden">
+                                        <p><img src="images/Vector 23.svg" alt="" /></p>
+                                    </div>
+                                    <div class="flex mt-10 mb-5">
+                                        <a class="text-[#000AFF] text-[16px] ml-4" href="#">All </a>
+                                        <a class="text-[16px] ml-4" href="#">Positive </a>
+
+                                        <a class="text-[16px] ml-4" href="#">Negative</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex md:flex-row flex-col justify-between pt-5 border-b pb-5">
+                                <div class="flex md:flex-row flex-col lg:w-[30%] items-center">
+                                    <div>
+                                        <img src="images/Ellipse 11.svg" alt="" />
+                                    </div>
+                                    <div class="ml-4 md:mt-0 mt-4">
+                                        <a class="text-[#000AFF] text-[16px]" href="#">INDIA_BTC_TRADE</a>
+                                        <p class="text-[16px] py-[10px]">Nov 05, 2022</p>
+                                        <a class="flex items-center bg-[#E0FBE0] py-[10px] px-[30px] text-[16px]" href="#">
+                                            <span class="pr-4"><img src="images/like01.svg" alt="" /></span> Positive
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex lg:justify-start justify-center md:mt-0 mt-5">
+                                    <div>
+                                        <a class="text-[#000AFF] text-[16px]" href="#">Xbox Gift Card</a>
+                                        <p class="text-[16px] py-[10px]">honest</p>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h5 class="p-2 bg-[#A8A5A5] rounded-lg">INR</h5>
+                                    </div>
+                                </div>
+                                <div class="md:mt-0 flex lg:justify-start justify-center items-start mt-5">
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center border" type="button">
+                                        Trades:4
+                                        <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <!-- Dropdown menu -->
+                                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+                                        <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownDefaultButton">
+                                            <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Dashboard</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Earnings</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sign out</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-b">
+                                <div class="flex md:flex-row flex-col justify-between mt-10 md:w-[68%] pb-6 w-full">
+                                    <div class="flex md:flex-row flex-col items-center">
+                                        <div>
+                                            <img src="images/Ellipse 11.svg" alt="" />
+                                        </div>
+                                        <div class="ml-4 md:mt-0 mt-4">
+                                            <a class="text-[#000AFF] text-[16px]" href="#">INDIA_BTC_TRADE</a>
+                                            <p class="text-[16px] py-[10px]">Nov 05, 2022</p>
+                                            <a class="flex items-center bg-[#E0FBE0] py-[10px] px-[30px] text-[16px]" href="#">
+                                                <span class="pr-4"><img src="images/like01.svg" alt="" /></span> Positive
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="flex lg:justify-start justify-center md:mt-0 mt-5">
+                                        <div>
+                                            <a class="text-[#000AFF] text-[16px]" href="#">Xbox Gift Card</a>
+                                            <p class="text-[16px] py-[10px]">honest</p>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h5 class="p-2 bg-[#A8A5A5] rounded-lg">INR</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-b">
+                                <div class="flex md:flex-row flex-col justify-between mt-10 md:w-[68%] pb-6 w-full">
+                                    <div class="flex md:flex-row flex-col items-center">
+                                        <div>
+                                            <img src="images/Ellipse 11.svg" alt="" />
+                                        </div>
+                                        <div class="ml-4 md:mt-0 mt-4">
+                                            <a class="text-[#000AFF] text-[16px]" href="#">INDIA_BTC_TRADE</a>
+                                            <p class="text-[16px] py-[10px]">Nov 05, 2022</p>
+                                            <a class="flex items-center bg-[#E0FBE0] py-[10px] px-[30px] text-[16px]" href="#">
+                                                <span class="pr-4"><img src="images/like01.svg" alt="" /></span> Positive
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="flex lg:justify-start justify-center md:mt-0 mt-5">
+                                        <div>
+                                            <a class="text-[#000AFF] text-[16px]" href="#">Xbox Gift Card</a>
+                                            <p class="text-[16px] py-[10px]">honest</p>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h5 class="p-2 bg-[#A8A5A5] rounded-lg">INR</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b">
+                                <div class="flex md:flex-row flex-col justify-between mt-10 md:w-[68%] pb-6 w-full">
+                                    <div class="flex md:flex-row flex-col items-center">
+                                        <div>
+                                            <img src="images/Ellipse 11.svg" alt="" />
+                                        </div>
+                                        <div class="ml-4 md:mt-0 mt-4">
+                                            <a class="text-[#000AFF] text-[16px]" href="#">INDIA_BTC_TRADE</a>
+                                            <p class="text-[16px] py-[10px]">Nov 05, 2022</p>
+                                            <a class="flex items-center bg-[#E0FBE0] py-[10px] px-[30px] text-[16px]" href="#">
+                                                <span class="pr-4"><img src="images/like01.svg" alt="" /></span> Positive
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="flex lg:justify-start justify-center md:mt-0 mt-5">
+                                        <div>
+                                            <a class="text-[#000AFF] text-[16px]" href="#">Xbox Gift Card</a>
+                                            <p class="text-[16px] py-[10px]">honest</p>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h5 class="p-2 bg-[#A8A5A5] rounded-lg">INR</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-[#1d2937] relative text-white mt-10 pt-10">
+            <div class="max-w-[1600px] mb-8 pt-6 mx-auto p-5">
+                <div class="flex lg:flex-row flex-col gap-[30px] items-center">
+                    <img src="assets/crycoxwhite-01-01 1.png" />
+                    <div>
+                        <a href="" class="border border-[#F1971F] hover:bg-[#FF9800] hover:text-white transition duration-300 px-6 py-2 rounded-[5px]">FAQ and Help Center</a>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-[1600px] px-5 pb-8 relative z-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+                <div class="flex-grow flex flex-wrap -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                    <div class="lg:w-1/5 md:w-1/2 w-full px-4">
+                        <h2 class="text-[#F1971F] font-medium text-md mb-3">For You</h2>
+                        <nav class="list-none mb-10">
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Buy Bitcoin</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Sell Bitcoin</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Buy Ether</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Sell Ether</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/5 md:w-1/2 w-full px-4">
+                        <h2 class="text-[#F1971F] font-medium text-md mb-3">For Your Business</h2>
+                        <nav class="list-none mb-10">
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Crycox Pay</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Virtual Crycox Kiosk</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">API Documentation</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/5 md:w-1/2 w-full px-4">
+                        <h2 class="text-[#F1971F] font-medium text-md mb-3">Growth</h2>
+                        <nav class="list-none mb-10">
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Crycox Rewards Program</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Crycox Trader Program</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Crycox Peer Program</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Community</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/5 md:w-1/2 w-full px-4">
+                        <h2 class="text-[#F1971F] font-medium text-md mb-3">Useful Links</h2>
+                        <nav class="list-none mb-10">
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Crycox Status</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Peer-to-Peer Market Prices</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/5 md:w-1/2 w-full px-4">
+                        <h2 class="text-[#F1971F] font-medium text-md mb-3">About CryCox</h2>
+                        <nav class="list-none mb-10">
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">About Us</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Business Contacts</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Business Contacts</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Crycox Blog</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Crycox Reviews</a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="javascript:void(0);" class="hover:text-[#FF9800] text-white transition duration-300">Build with Crycox</a>
+                            </li>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-[#ED8721] text-white">
+                <div class="max-w-[1600px] mx-auto mt-5 py-4 px-5 items-center justify-between flex flex-wrap flex-col lg:flex-row">
+                    <div class="flex lg:mb-0 mb-3 lg:justify-start justify-center">
+                        <p class="text-md text-center sm:text-left">All Rights Reserved Crycox 2023</p>
+                    </div>
+                    <div class="sm:mt-0 mt-3">
+                        <ul class="flex sm:flex-row flex-col lg:justify-start lg:text-left text-center justify-center gap-3">
+                            <li class="mr-2 lg:text-[16px] text-[14px]"><a href="#">Terms and Conditions</a></li>
+                            <li><a href="#" class="lg:text-[16px] mr-2 text-[14px]">Privacy Policy</a></li>
+                            <li><a href="#" class="lg:text-[16px] text-[14px]">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex lg:justify-end justify-center lg:mt-0 mt-3">
+                        <span class="inline-flex flex mt-2 justify-center">
+                            <a href="https://www.facebook.com/" class="border border-white w-8 h-8 flex justify-center items-center rounded-[5px]" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com/" class="ml-3 border border-white w-8 h-8 flex justify-center items-center rounded-[5px]" target="_blank">
+                                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/" class="ml-3 border border-white w-8 h-8 flex justify-center items-center rounded-[5px]" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" class="ml-3 border border-white w-8 h-8 flex justify-center items-center rounded-[5px]" target="_blank">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute top-0 left-0 z-0">
+                <img src="assets/Lines.svg" />
+            </div>
+            <div class="absolute top-0 right-0 z-0">
+                <img src="assets/Lines (1).svg" />
+            </div>
+        </footer>
+
+        <!--  footer section end -->
+        <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
